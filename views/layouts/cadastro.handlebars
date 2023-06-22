@@ -1,0 +1,279 @@
+<header>
+    <h2 class="logo"> Logo</h2>
+
+    <nav class="nave">
+
+        <a href="/">Home</a>
+
+        <a href="#">Sobre</a>
+
+        <button type="submit" class="btnLog-popUp" onclick="fazerlog()">Fazer login</button>
+
+    </nav>
+
+</header>
+
+<main>
+    <h1>Criar Conta</h1>
+    <div class="social-media">
+        <a href="#">
+            <img src="img/icons8-google.png" alt="Google">
+        </a>
+        <a href="#">
+            <img src="img/icons8-facebook.png" alt="Facebook">
+        </a>
+        <a href="#">
+            <img src="img/icons8-linkedin-circled.png" alt="Linkedin">
+        </a>
+    </div>
+
+    <div class="alternative">
+        <span>OR</span>
+    </div>
+
+    <form action="/teste/insertteste" method="post">
+        <label for="name">
+            <span>Name</span>
+            <input type="text" id="name" name="name">
+
+        </label>
+        <label for="email">
+            <span>E-mail</span>
+            <input type="text" id="email" name="email">
+
+        </label>
+        <label for="password">
+            <span>Password</span>
+            <input type="password" id="password" name="password">
+
+        </label>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</main>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Merriweather+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans:wght@400;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 100px;
+        background: #201b2c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+        font-size: 0.9rem;
+    }
+
+    .nave a {
+        position: relative;
+        font-size: 1.1em;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 520;
+        margin-left: 35px;
+    }
+
+    .nave a:hover {
+        color: #00ff88;
+    }
+
+    .nave a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #00ff88;
+        border-radius: 6px;
+        left: 0;
+        bottom: -6px;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+
+
+    .nave a:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+
+    .nave .btnLog-popUp {
+        width: 120px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid #00ff88;
+        outline: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 1.1em;
+        color: #f0ffff;
+        font-weight: 520;
+        margin-left: 35px;
+        transition: .4s;
+    }
+
+    .nave .btnLog-popUp:hover {
+        background: #00ff88;
+        color: #2b134b;
+        box-shadow: 0px 10px 40px -12px #00ff8052;
+    }
+
+    .logo {
+        font-size: 2em;
+        color: azure;
+        user-select: none;
+    }
+
+
+    body {
+        background: #201b2c;
+        color: #00ff88;
+        font-weight: 500;
+        display: flex;
+        min-height: 100vh;
+    }
+
+    main {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main h1 {
+        color: #77ffc0;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    main .social-media {
+        display: flex;
+        align-items: center;
+    }
+
+    main .social-media a {
+        text-decoration: none;
+    }
+
+    main .social-media img {
+        width: 36px;
+        margin-left: 3rem;
+    }
+
+    main .social-media a:first-child img {
+        margin-left: 0;
+    }
+
+    main form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main form label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main form label span {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+
+    }
+
+    main form input {
+        background: #514869;
+        width: 300px;
+        height: 50px;
+        padding: 0 0.5rem;
+        margin-top: 0.5rem;
+        outline: none;
+        color: #f0ffffde;
+        border-radius: 10px;
+    }
+
+    main form input[type="submit"] {
+        cursor: pointer;
+        margin-top: 3rem;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #2b134b;
+        background: #00ff88;
+        cursor: pointer;
+        box-shadow: 0px 10px 40px -12px #00ff8052;
+    }
+
+    section.images {
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    section.images img {
+        width: 35vw;
+    }
+
+    /* media queries para dispositivos menores */
+
+    @media screen and (max-width: 768px) {
+        body {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        main h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        main .social-media {
+            margin-top: 2rem;
+        }
+
+        main form input {
+            width: 100%;
+        }
+
+        section.images {
+            width: 100%;
+            height: auto;
+        }
+
+        section.images img {
+            width: 90%;
+        }
+    }
+</style>
+
+<script>
+    function fazerlog(){
+        window.location.href = "/login"
+    }
+</script>
